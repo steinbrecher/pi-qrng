@@ -3,7 +3,7 @@
 # # File Name: select_winner.py
 # # 
 # # Current owner: Greg Steinbrecher (steinbrecher@alum.mit.edu)
-# # Last Modified Time-stamp: <2015-02-11 06:46:58 gstein>
+# # Last Modified Time-stamp: <2015-02-11 06:49:49 gstein>
 # # 
 # # Created by: Greg Steinbrecher (steinbrecher@alum.mit.edu)
 # # Created on: 2015-02-08 (Sunday, February 8th, 2015)
@@ -34,8 +34,9 @@ offsets = np.array([pi.index(s) for s in randomStrings])
 # Find 2012
 index2012 = pi.index('2012')
 
-# Find minimum
-print "Winner Index: {:d}".format(np.abs(offsets - index2012).argmin())
+# Find minimum, adding two
+# One to account for spreadsheet offset, one to account for python 0-indexing
+print "Winner Index: {:d}".format(2 + np.abs(offsets - index2012).argmin())
     
 
 
